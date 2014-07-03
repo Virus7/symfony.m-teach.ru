@@ -1,4 +1,7 @@
-symfony.m-teach.ru
-==================
+<?php
 
-Symfony 2 tests
+echo 'hello world';
+
+phpinfo();
+
+?>
