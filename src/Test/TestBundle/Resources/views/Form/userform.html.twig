@@ -1,0 +1,56 @@
+{% extends 'TestTestBundle::layout.html.twig' %}
+
+{% block meta %}
+	<meta keywords="Test symfony" />
+{% endblock %}
+	
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('bundles/test/css/style.css') }}" />
+{% endblock %}
+	
+{% block title %}{{ title }}{% endblock %}
+	
+{% block page_header %}{{ header }}{% endblock %}
+
+{% form_theme form _self %}
+
+{% block textarea_widget %}
+{% spaceless %}
+    <textarea class="myTexArea" {{ block('widget_attributes') }}>{{ value }}</textarea>
+{% endspaceless %}
+{% endblock textarea_widget %}
+		
+{% block form_row %}
+{% spaceless %}
+	<tr>
+		<td class="label">{{ form_label(form) }}</td>
+		<td class="file">{{ form_errors(form) }}{{ form_widget(form) }}</td>
+	</tr>
+{% endspaceless %}
+{% endblock form_row %}
+	
+{% block form_rows %}
+{% spaceless %}
+	<table>
+		{% for child in form %}
+			{{ form_row(child) }}
+		{% endfor %}
+	</table>
+{% endspaceless %}
+{% endblock form_rows %}
+	
+{% block content %}
+	<div class="symfony-blocks-welcome">
+		<div class="forms">
+			<form action="{{ path('message') }}" method="post" {{ form_enctype(form) }}>
+				{{ form_widget(form) }}
+					<div class="submit">
+						<input type="submit" />
+					</div>
+			</form>
+    </div>
+		{% for val in errors %}
+		<div class="errors">{{ val }}</div>
+		{% endfor %}
+	</div>
+{% endblock %}

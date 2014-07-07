@@ -1,0 +1,9 @@
+<table>
+	{% for key in data %}
+	<tr>
+		{% for val in key %}
+		<td>{{ val }}</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}
+</table>

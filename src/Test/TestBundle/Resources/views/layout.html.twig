@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+	{% block meta %}{% endblock %}
+	{% block stylesheets %}{% endblock %}
+	<title>{% block title 'My Test Bundle' %}</title>
+{% endblock %}
+
+{% block body %}
+	<div class="block">
+		<div class='actionname'>{{ actionname }}</div>
+		<div class='clear'></div>
+		<div class="symfony-blocks-welcome">
+			<h1>{% block page_header '' %}</h1>
+		{% block content %}{% endblock %}
+		</div>	
+	</div>
+{% endblock %}

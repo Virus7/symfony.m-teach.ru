@@ -1,0 +1,18 @@
+{% extends 'TestTestBundle::layout.html.twig' %}
+
+{% block meta %}
+	<meta keywords="Test symfony" />
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('bundles/test/css/style.css') }}" />
+{% endblock %}
+	
+{% block title %}{{ title }}{% endblock %}
+	
+{% block page_header %}{{ header }}{% endblock %}
+
+{% block content %}
+	<center>
+		<a href='/'>Вернуться на главную</a> или <a href='/userform'>Заполнить форму еще раз</a>
+	</center>
+{% endblock %}

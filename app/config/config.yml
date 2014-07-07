@@ -14,6 +14,7 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
+
         #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_hosts:   ~
@@ -28,7 +29,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"

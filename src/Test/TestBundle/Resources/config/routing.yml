@@ -1,0 +1,13 @@
+test_test_homepage:
+    pattern:  /
+    defaults: { _controller: TestTestBundle:Default:index }
+
+_userform:
+    pattern:  /userform
+    defaults: { _controller: TestTestBundle:Default:userform }
+    
+message:
+    pattern:  /message
+    defaults: { _controller: TestTestBundle:Default:sendmessage }
+    requirements:
+        _method:  POST
